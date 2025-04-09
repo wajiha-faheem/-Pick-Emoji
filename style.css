@@ -1,0 +1,106 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #2c3e50, #4ca1af);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+
+  #emojiBtn {
+    padding: 14px 28px;
+    font-size: 18px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    color: #2c3e50;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 0 8px 20px rgba(255, 154, 158, 0.5);
+    transition: all 0.3s ease;
+  }
+  
+  #emojiBtn::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0.4),
+      rgba(255, 255, 255, 0.1)
+    );
+    transform: rotate(25deg);
+    animation: shine 3s linear infinite;
+  }
+  
+  #emojiBtn:hover {
+    transform: scale(1.07);
+    box-shadow: 0 10px 25px rgba(255, 154, 158, 0.8);
+  }
+  
+  @keyframes shine {
+    0% {
+      transform: rotate(25deg) translate(-100%, -100%);
+    }
+    100% {
+      transform: rotate(25deg) translate(100%, 100%);
+    }
+  }
+  
+
+  #emojiBox {
+    margin: 20px 0;
+    display: none;
+    max-width: 450px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+    gap: 15px;
+    justify-items: center;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+  }
+  
+  .emoji {
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.2s ease, filter 0.2s ease;
+  }
+  
+  .emoji:hover {
+    transform: scale(1.3);
+    filter: drop-shadow(0 0 5px #fff);
+  }
+  
+ 
+  #output {
+    font-size: 20px;
+    margin-top: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 20px;
+    border-radius: 12px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  #selectedEmoji {
+    font-weight: bold;
+    font-size: 22px;
+    color: #ffeaa7;
+    margin-left: 8px;
+  }
+  
